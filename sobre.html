@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sobre - Aviação Elite</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* --- Reset básico --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+      line-height: 1.6;
+    }
+
+    /* --- Navbar --- */
+    .navbar {
+      background-color: #000000;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar .logo {
+      font-size: 1.5rem;
+      color: #ffffff;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    .navbar a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #e2c351;
+    }
+
+    /* --- Seções Sobre --- */
+    main {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    main h2 {
+      font-size: 2.5rem;
+      color: #000000;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .sobre-bloco {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 50px;
+      opacity: 0; /* invisível no início */
+      transform: translateY(30px); /* leve deslocamento para baixo */
+      animation: fadeInUp 1s forwards; /* animação ao carregar */
+    }
+
+    .sobre-bloco.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .sobre-img {
+      flex: 1;
+    }
+
+    .sobre-img img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .sobre-img img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .sobre-texto {
+      flex: 1;
+      text-align: left;
+    }
+
+    .sobre-texto h3 {
+      font-size: 2rem;
+      color: #e2c351;
+      margin-bottom: 15px;
+    }
+
+    .sobre-texto p {
+      font-size: 1.1rem;
+      color: #333333;
+    }
+
+    /* --- Footer --- */
+    footer {
+      background-color: #000000;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    /* --- Animação Fade-in + slide --- */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* --- Responsividade --- */
+    @media(max-width: 900px) {
+      .sobre-bloco, .sobre-bloco.reverse {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .sobre-texto {
+        text-align: center;
+      }
+
+      .sobre-img img {
+        height: 200px;
+      }
+    }
+
+    @media(max-width: 600px) {
+      main h2 {
+        font-size: 2rem;
+      }
+
+      .sobre-texto h3 {
+        font-size: 1.5rem;
+      }
+
+      .sobre-texto p {
+        font-size: 1rem;
+      }
+
+      .sobre-img img {
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1 class="logo">Aviação Elite</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <h2>Sobre Nós</h2>
+
+    <!-- Bloco 1: Imagem esquerda -->
+    <section class="sobre-bloco" style="animation-delay: 0.2s;">
+      <div class="sobre-img">
+        <img src="outros.jpg" alt="Equipe Aviação Elite">
+      </div>
+      <div class="sobre-texto">
+        <h3>Quem Somos</h3>
+        <p>A Aviação Elite é dedicada à excelência em engenharia aeronáutica, trazendo inovação e segurança em cada projeto.</p>
+      </div>
+    </section>
+
+    <!-- Bloco 2: Imagem direita -->
+    <section class="sobre-bloco reverse" style="animation-delay: 0.4s;">
+      <div class="sobre-img">
+        <img src="fabrica.jpg" alt="Fábrica e manutenção">
+      </div>
+      <div class="sobre-texto">
+        <h3>Nossa Estrutura</h3>
+        <p>Contamos com instalações modernas e equipamentos de ponta para garantir a qualidade de todos os serviços.</p>
+      </div>
+    </section>
+
+    <!-- Bloco 3: Imagem esquerda -->
+    <section class="sobre-bloco" style="animation-delay: 0.6s;">
+      <div class="sobre-img">
+        <img src="voo.jpg" alt="Aeronaves em voo">
+      </div>
+      <div class="sobre-texto">
+        <h3>Missão</h3>
+        <p>Fornecer inovação, performance e segurança em todos os projetos aeronáuticos que realizamos.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Aviação Elite. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
